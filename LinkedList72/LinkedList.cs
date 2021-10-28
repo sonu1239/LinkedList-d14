@@ -8,12 +8,24 @@ namespace LinkedList72
 {
     class LinkedList
     {
-        internal Node head;                        //defined head position
-        internal void Add(int data)
+        internal Node head;                         //defined head position
+        internal void AddLast(int data)             //Appening in last
         {
             Node newNode = new Node(data);         //defining and creating object of node class ,pushing data to node class
-            newNode.next = this.head;
-            this.head = newNode;
+
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node temp = head;                     //creating temp variable
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = newNode;
+            }
         }
         internal void Display()                    //display the linklist data
         {
