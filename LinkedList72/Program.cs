@@ -10,11 +10,10 @@ namespace LinkedList72
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Wellcome to LinkedList ");
             LinkedList list = new LinkedList();      //creating object of linklist class
-            list.AddLast(56);
-            list.AddLast(30);
-            list.AddLast(70);
+            list.Insert(56);
+            list.Insert(70);
+            list.insertAfter(list.head.next, 30);
             list.Display();
             Console.ReadLine();
 
