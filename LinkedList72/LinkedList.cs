@@ -11,25 +11,13 @@ namespace LinkedList72
         internal Node head;                        //defined head position
         internal void Add(int data)
         {
-            Node node = new Node(data);         //defining and creating object of node class ,pushing data to node class
-            if (this.head == null)
-            {
-                this.head = node;
-            }
-            else
-            {
-                Node temp = head;                     //creating temp variable
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = node;
-            }
-            Console.WriteLine("{0} inserted into linkhed list", node.data);
+            Node newNode = new Node(data);         //defining and creating object of node class ,pushing data to node class
+            newNode.next = this.head;
+            this.head = newNode;
         }
-
-        internal void Display()
+        internal void Display()                    //display the linklist data
         {
+            Console.WriteLine("\ndisplay linklist element is: ");
             Node temp = this.head;
             if (temp == null)
             {
@@ -43,5 +31,6 @@ namespace LinkedList72
             }
 
         }
+
     }
 }
