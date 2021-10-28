@@ -8,5 +8,11 @@ namespace LinkedList72
 {
     class Node
     {
+        public int data;  //store element
+        public Node next;
+        public Node(int data)  //constructor
+        {
+            this.data = data;
+        }
     }
 }
