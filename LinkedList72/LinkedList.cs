@@ -29,15 +29,24 @@ namespace LinkedList72
             }
             Console.WriteLine("\n {0} data is insterted into linked list", newNode.data);
         }
-        internal Node RemoveFirst()     //removing first data from linked list
+        internal Node RemoveLast()     //removing last data from linked list
         {
 
             if (this.head == null)
             {
                 return null;
             }
-            this.head = this.head.next;
-            return this.head;
+            if (this.head.next == null)
+            {
+                return null;
+            }
+            Node node = this.head;
+            while (node.next.next != null)
+            {
+                node = node.next;
+            }
+            node.next = null;
+            return head;
 
         }
         internal void Display()                    //display the linklist data
