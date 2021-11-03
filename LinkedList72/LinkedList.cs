@@ -10,6 +10,7 @@ namespace LinkedList72
     {
 
 
+
         internal Node head;                         //defined head position
         internal void Insert(int data)             //Inserting  new integer data into linklist
         {
@@ -30,18 +31,40 @@ namespace LinkedList72
             }
             Console.WriteLine("\n {0} data is insterted into linked list", newNode.data);
         }
-        internal void InsertAfter(Node prevNode, int data)     //insert between two or more nodes
+        //delete an element at the given position
+        public void deletePosition(int position)    //delete at given position
         {
-            Console.WriteLine("\n AfterInsert element is :");
-            prevNode = this.head;
-            if (prevNode.next.next == null)
+            if (position < 1)
             {
-                Console.WriteLine("\n previous node is null");
-                return;
+                Console.WriteLine("\n position should be >=1");
             }
-            Node Newnode1 = new Node(data);
-            Newnode1.next = prevNode.next.next;
-            prevNode.next.next = Newnode1;        //prevNode of next is new node
+            else if (position == 1 && head != null)
+            {
+                Node nodeToDelete = head;
+                head = head.next;
+                nodeToDelete = null;        //prevNode of next is new node
+            }
+            else
+            {
+                Node temp = head; // head assigned to temp
+                for (int i = 1; i < position - 1; i++) 
+                {
+                    if (temp != null)
+                    {
+                        temp = temp.next;
+                    }
+                }
+                if (temp != null && temp.next != null)
+                {
+                    Node nodeToDelete = temp.next;
+                    temp.next = temp.next.next;
+                    nodeToDelete = null;
+                }
+                else
+                {
+                    Console.WriteLine("node is already null");
+                }
+            }
         }
         internal void Display()                    //display the linklist data
         {
