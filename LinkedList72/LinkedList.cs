@@ -9,6 +9,7 @@ namespace LinkedList72
     class LinkedList
     {
 
+
         internal Node head;                         //defined head position
         internal void Insert(int data)             //Inserting  new integer data into linklist
         {
@@ -29,20 +30,18 @@ namespace LinkedList72
             }
             Console.WriteLine("\n {0} data is insterted into linked list", newNode.data);
         }
-        internal Node Search(int data)     //removing last data from linked list
+        internal void InsertAfter(Node prevNode, int data)     //insert between two or more nodes
         {
-
-
-            while (this.head != null)
+            Console.WriteLine("\n AfterInsert element is :");
+            prevNode = this.head;
+            if (prevNode.next.next == null)
             {
-                if (this.head.data == data)
-                {
-                    return this.head;
-                }
-                this.head = this.head.next;
+                Console.WriteLine("\n previous node is null");
+                return;
             }
-            return null;
-
+            Node Newnode1 = new Node(data);
+            Newnode1.next = prevNode.next.next;
+            prevNode.next.next = Newnode1;        //prevNode of next is new node
         }
         internal void Display()                    //display the linklist data
         {
