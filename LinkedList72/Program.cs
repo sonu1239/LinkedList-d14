@@ -15,7 +15,7 @@ namespace LinkedList72
             list.Insert(30);
             list.Insert(40);
             list.Insert(70);
-            list.deletePosition(3);
+            list.SortedAscending();
             list.Display();
             Console.ReadLine();
 

@@ -13,6 +13,7 @@ namespace LinkedList72
         public Node(int data)  //constructor
         {
             this.data = data;
+            next = null;
         }
     }
 }

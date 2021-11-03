@@ -31,39 +31,27 @@ namespace LinkedList72
             }
             Console.WriteLine("\n {0} data is insterted into linked list", newNode.data);
         }
-        //delete an element at the given position
-        public void deletePosition(int position)    //delete at given position
+
+        internal void SortedAscending()                    // here Ascending order display the all element in given linklist
         {
-            if (position < 1)
+            Node NewNode1 = this.head;                      //assigned head to newNode 
+
+            if (this.head == null || this.head.data >= NewNode1.data) //compare condition is head is null and head data and is largest newNode data
             {
-                Console.WriteLine("\n position should be >=1");
-            }
-            else if (position == 1 && head != null)
-            {
-                Node nodeToDelete = head;
-                head = head.next;
-                nodeToDelete = null;        //prevNode of next is new node
+                NewNode1.next = this.head;                   //head is assigned to the newNode next
+                this.head = NewNode1;                        //newNode assigned to the head
             }
             else
             {
-                Node temp = head; // head assigned to temp
-                for (int i = 1; i < position - 1; i++) 
+                Node temp = this.head;                      //here Node type of temp variable create and assigned to the head
+
+                /* Locate the node before the point of insertion */
+                while (temp.next != null && temp.next.data < NewNode1.data) //comparing condition
                 {
-                    if (temp != null)
-                    {
-                        temp = temp.next;
-                    }
+                    temp = temp.next;                        //increment temp variable
                 }
-                if (temp != null && temp.next != null)
-                {
-                    Node nodeToDelete = temp.next;
-                    temp.next = temp.next.next;
-                    nodeToDelete = null;
-                }
-                else
-                {
-                    Console.WriteLine("node is already null");
-                }
+                NewNode1.next = temp.next;                    //assigned to the temp next to the newNode next
+                temp.next = NewNode1;                         //newnode assigned to the temp next
             }
         }
         internal void Display()                    //display the linklist data
@@ -84,7 +72,6 @@ namespace LinkedList72
                 }
 
             }
-
 
 
         }
