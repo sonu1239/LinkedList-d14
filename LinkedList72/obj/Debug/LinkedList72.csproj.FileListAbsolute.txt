@@ -1,0 +1,7 @@
+C:\Users\MY\source\repos\LinkedList72\LinkedList72\bin\Debug\LinkedList72.exe.config
+C:\Users\MY\source\repos\LinkedList72\LinkedList72\bin\Debug\LinkedList72.exe
+C:\Users\MY\source\repos\LinkedList72\LinkedList72\bin\Debug\LinkedList72.pdb
+C:\Users\MY\source\repos\LinkedList72\LinkedList72\obj\Debug\LinkedList72.csproj.AssemblyReference.cache
+C:\Users\MY\source\repos\LinkedList72\LinkedList72\obj\Debug\LinkedList72.csproj.CoreCompileInputs.cache
+C:\Users\MY\source\repos\LinkedList72\LinkedList72\obj\Debug\LinkedList72.exe
+C:\Users\MY\source\repos\LinkedList72\LinkedList72\obj\Debug\LinkedList72.pdb

@@ -8,6 +8,7 @@ namespace LinkedList72
 {
     class LinkedList
     {
+
         internal Node head;                         //defined head position
         internal void Insert(int data)             //Inserting  new integer data into linklist
         {
@@ -28,18 +29,15 @@ namespace LinkedList72
             }
             Console.WriteLine("\n {0} data is insterted into linked list", newNode.data);
         }
-        internal void insertAfter(Node prevNode, int data)     //inserting new integer data to linklist
+        internal Node RemoveFirst()     //removing first data from linked list
         {
-            Console.WriteLine("\n After Inserting element,");
-            prevNode = this.head;
-            if (prevNode == null)
+
+            if (this.head == null)
             {
-                Console.WriteLine("\n previous given node is null");
-                return;
+                return null;
             }
-            Node newNode1 = new Node(data);
-            newNode1.next = prevNode.next;
-            prevNode.next = newNode1;
+            this.head = this.head.next;
+            return this.head;
 
         }
         internal void Display()                    //display the linklist data
@@ -61,8 +59,10 @@ namespace LinkedList72
 
             }
 
-
         }
 
+
     }
+
+    
 }
