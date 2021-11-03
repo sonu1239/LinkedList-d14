@@ -14,9 +14,11 @@ namespace LinkedList72
             list.Insert(56);
             list.Insert(30);
             list.Insert(70);
-            list.RemoveLast();
+            list.Display();
+            list.Search(30);
             list.Display();
             Console.ReadLine();
+
         }
     }
 }   

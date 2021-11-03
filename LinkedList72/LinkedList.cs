@@ -29,24 +29,19 @@ namespace LinkedList72
             }
             Console.WriteLine("\n {0} data is insterted into linked list", newNode.data);
         }
-        internal Node RemoveLast()     //removing last data from linked list
+        internal Node Search(int data)     //removing last data from linked list
         {
 
-            if (this.head == null)
+
+            while (this.head != null)
             {
-                return null;
+                if (this.head.data == data)
+                {
+                    return this.head;
+                }
+                this.head = this.head.next;
             }
-            if (this.head.next == null)
-            {
-                return null;
-            }
-            Node node = this.head;
-            while (node.next.next != null)
-            {
-                node = node.next;
-            }
-            node.next = null;
-            return head;
+            return null;
 
         }
         internal void Display()                    //display the linklist data
@@ -67,6 +62,8 @@ namespace LinkedList72
                 }
 
             }
+
+
 
         }
 
